@@ -1,0 +1,6 @@
+@import '@economist/component-silver-chartwrapper';
+
+.d3-bar-rect {
+  fill: #8888aa;
+  cursor: pointer;
+}
