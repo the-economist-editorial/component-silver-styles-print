@@ -1,5 +1,5 @@
 {
-  "name": "component-silver-styles-print",
+  "name": "@economist/component-silver-styles-print",
   "version": "1.0.0",
   "description": "Component for Silver Bullet, to overwrite default CSS with print styles",
   "author": "The Economist (http://economist.com)",
