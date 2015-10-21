@@ -8,13 +8,16 @@ export default class SilverStylesPrint extends React.Component {
       data: React.PropTypes.object,
       dimensions: React.PropTypes.object,
       test: React.PropTypes.string,
+      getSvg: React.PropTypes.bool,
     };
   }
   // PROP TYPES ends
 
   // DEFAULT PROPS
   static get defaultProps() {
-    return {};
+    return {
+      getSvg: false,
+    };
   }
   // DEFAULT PROPS ends
 
@@ -42,7 +45,7 @@ export default class SilverStylesPrint extends React.Component {
   render() {
     const data = this.state.data;
     return (
-      <SilverChartWrapper data={data}/>
+      <SilverChartWrapper data={data} getSvg={this.props.getSvg}/>
     );
   }
   // RENDER ends
