@@ -10,7 +10,7 @@ export default class SilverStylesPrint extends React.Component {
   // PROP TYPES
   static get propTypes() {
     return {
-      data: React.PropTypes.object,
+      config: React.PropTypes.object,
       test: React.PropTypes.string,
       // Flag and callback for svg content
       getSvg: React.PropTypes.bool,
@@ -25,7 +25,7 @@ export default class SilverStylesPrint extends React.Component {
   // and the svg callback...
   render() {
     return (
-      <SilverChartWrapper data={this.props.data} getSvg={this.props.getSvg} passSvg={this.props.passSvg}/>
+      <SilverChartWrapper data={this.props.config} getSvg={this.props.getSvg} passSvg={this.props.passSvg}/>
     );
   }
   // RENDER ends
