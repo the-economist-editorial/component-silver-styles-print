@@ -4,6 +4,7 @@
     */
 import React from 'react';
 import SilverChartWrapper from '@economist/component-silver-chartwrapper';
+import printConfig from './assets/printconfig.json';
 
 export default class SilverStylesPrint extends React.Component {
 
@@ -30,17 +31,29 @@ export default class SilverStylesPrint extends React.Component {
   // CONSTRUCTOR ends
 
   // AMEND CONFIG is called from render to
-  // add context-specific poperties to the
+  // add context-specific properties to the
   // inherited props.config...
   amendConfig(config) {
-    config.strings.title.x = 12;
-    config.strings.title.y = 15;
-    config.strings.subtitle.x = 12;
-    config.strings.subtitle.y = 30;
-    config.strings.source.x = 12;
-    config.strings.source.y = -5;
-    config.strings.footnote.x = -12;
-    config.strings.footnote.y = -5;
+    const target = config.strings;
+    const strList = Object.keys(target);
+    const source = printConfig;
+    for (const i in strList) {
+      const str = strList[i];
+      // Get each string object
+      const propObj = source[str];
+      // Hard-code to x and y properties --
+      // double-loop is madness!
+      config.strings[str].x = propObj.x;
+      config.strings[str].y = propObj.y;
+    }
+    // config.strings.title.x = 12;
+    // config.strings.title.y = 15;
+    // config.strings.subtitle.x = 12;
+    // config.strings.subtitle.y = 30;
+    // config.strings.source.x = 12;
+    // config.strings.source.y = -5;
+    // config.strings.footnote.x = -12;
+    // config.strings.footnote.y = -50;
     return config;
   }
 
