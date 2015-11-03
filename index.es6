@@ -39,23 +39,12 @@ export default class SilverStylesPrint extends React.Component {
     const source = printConfig;
     for (const i in strList) {
       const str = strList[i];
-      // Get each string object
-      const propObj = source[str];
-      // Hard-code to x and y properties --
-      // double-loop is madness!
-      config.strings[str].x = propObj.x;
-      config.strings[str].y = propObj.y;
+      // Assign new vals to default config object
+      target[str] = Object.assign(target[str], source[str]);
     }
-    // config.strings.title.x = 12;
-    // config.strings.title.y = 15;
-    // config.strings.subtitle.x = 12;
-    // config.strings.subtitle.y = 30;
-    // config.strings.source.x = 12;
-    // config.strings.source.y = -5;
-    // config.strings.footnote.x = -12;
-    // config.strings.footnote.y = -50;
     return config;
   }
+  // AMEND CONFIG ends
 
   // RENDER
   // Child component is the 'waist' in the hierarchy. Props, bequeathed
