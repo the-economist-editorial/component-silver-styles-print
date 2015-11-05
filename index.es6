@@ -47,12 +47,13 @@ export default class SilverStylesPrint extends React.Component {
   // AMEND CONFIG ends
 
   // RENDER
-  // Child component is the 'waist' in the hierarchy. Props, bequeathed
-  // unchanged from SilverBullet, are data object, getSvg flag,
-  // and the svg callback...
+  // Child component is the 'waist' in the hierarchy. Props from SilverBullet are:
+  // cloned config object, getSvg flag, and the svg callback...
   render() {
-    // Append context-specific properties to config
-    const config = this.amendConfig(this.props.config);
+    // Clone inherited config and append context-specific properties
+    // (ESLint errors this)
+    const configClone = { ...this.props.config };
+    const config = this.amendConfig(configClone);
     return (
       <SilverChartWrapper config={config} getSvg={this.props.getSvg} passSvg={this.props.passSvg}/>
     );
