@@ -1,0 +1,49 @@
+{
+  "strings": [
+    {
+        "name": "title",
+        "display": true,
+        "class": "chart-d3-title",
+        "sourceNode": "title",
+        "x": 12,
+        "y": 15
+    },
+    {
+        "name": "subtitle",
+        "display": true,
+        "class": "chart-d3-subtitle",
+        "sourceNode": "subtitle",
+        "x": 12,
+        "y": 30
+    },
+    {
+        "name": "source",
+        "display": true,
+        "class": "chart-d3-source",
+        "sourceNode": "source",
+        "x": 12,
+        "y": -5
+    },
+    {
+        "name": "footnote",
+        "display": true,
+        "class": "chart-d3-footnote",
+        "sourceNode": "footnote",
+        "x": -12,
+        "y": -5
+     }
+  ],
+  "shapes": [
+    {
+    "name": "main background box",
+    "class": "chart-d3-backbox-main",
+    "display": true,
+    "x":  0,
+    "y": 0,
+    "width": "160px",
+    "height": "155px"
+    },
+    {"class": "chart-d3-backbox-sub", "display": true, ... ...},
+    {"class": "chart-d3-outline-top", "display": true, ... ...},
+  ]
+}

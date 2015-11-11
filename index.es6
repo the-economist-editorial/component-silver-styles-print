@@ -4,7 +4,11 @@
     */
 import React from 'react';
 import SilverChartWrapper from '@economist/component-silver-chartwrapper';
+// printconfig.json currently defines marginal strings x/y coords only
 import printConfig from './assets/printconfig.json';
+// print_background.jsxon currently yields an array of background elements
+// with complete SVG inline styles
+import printBackground from './assets/print_background.json';
 
 export default class SilverStylesPrint extends React.Component {
 
@@ -42,6 +46,8 @@ export default class SilverStylesPrint extends React.Component {
       // Assign new vals to default config object
       target[str] = Object.assign(target[str], source[str]);
     }
+    // Append background element definitions:
+    config.background = printBackground;
     return config;
   }
   // AMEND CONFIG ends
@@ -55,7 +61,10 @@ export default class SilverStylesPrint extends React.Component {
     const configClone = { ...this.props.config };
     const config = this.amendConfig(configClone);
     return (
-      <SilverChartWrapper config={config} getSvg={this.props.getSvg} passSvg={this.props.passSvg}/>
+      <SilverChartWrapper
+        config={config}
+        getSvg={this.props.getSvg} passSvg={this.props.passSvg}
+      />
     );
   }
   // RENDER ends
