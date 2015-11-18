@@ -31,7 +31,7 @@
     "x":  0,
     "y": 0,
     "width":  "160px",
-    "height": "1px",
+    "height": "0.3px",
     "adjustable": {"height": false, "width": true},
     "fill": "#FF0000"
     }

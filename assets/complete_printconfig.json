@@ -1,0 +1,58 @@
+{
+  "background": {
+    "dimensions": {
+      "outerbox": { "width": 160, "height": 155 },
+      "margins": { "top": 40, "right": 12, "bottom": 15, "left": 12 }
+    },
+    "strings": {
+      "title": { "x": 12, "y": 15, "leading": 10 },
+      "subtitle": { "x": 12, "y": 25, "leading": 8  },
+      "source": { "x": 12, "y": -5, "leading": 6.5  },
+      "footnote": { "x": -12, "y": -5, "leading": 6.5  }
+    },
+    "shapes": [
+        {
+        "name": "Main background box (compulsory: set to same size as chart overall)",
+        "shape": "rect",
+        "class": "chart-d3-backbox-main",
+        "display": true,
+        "x":  0,
+        "y": 0,
+        "width": "160px",
+        "height": "155px",
+        "adjustable": {"height": true, "width": true},
+        "fill": "#D5E4EA"
+        },
+        {
+        "name": "Sub-background box (red flash)",
+        "shape": "rect",
+        "class": "chart-d3-backbox-sub",
+        "display": true,
+        "x":  0,
+        "y": 0,
+        "width": "5px",
+        "height": "15px",
+        "adjustable": {"height": false, "width": false},
+        "fill": "#FF0000"
+        },
+        {
+        "name": "Background box: red line at top",
+        "shape": "rect",
+        "class": "chart-d3-backbox-topline",
+        "display": true,
+        "x":  0,
+        "y": 0,
+        "width":  "160px",
+        "height": "0.3px",
+        "adjustable": {"height": false, "width": true},
+        "fill": "#FF0000"
+        }
+      ]
+    },
+    "chart": {
+      "style": "bars",
+      "property_deleted_ticks": 3,
+      "xOrient": "top",
+      "yOrient": "left"
+    }
+}

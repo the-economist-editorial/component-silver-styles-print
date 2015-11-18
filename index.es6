@@ -1,14 +1,12 @@
-/* Style components do no more than:
-    pass on arguments from SilverBullet
-    override default CSS with specific styles
+/* Style components seem to be stateless and do no more than:
+    - pass on arguments from SilverBullet
+    - override default CSS with specific styles
+    - append style-specific config properties
     */
 import React from 'react';
 import SilverChartWrapper from '@economist/component-silver-chartwrapper';
-// printconfig.json currently defines marginal strings x/y coords only
-import printConfig from './assets/printconfig.json';
-// print_background.jsxon currently yields an array of background elements
-// with complete SVG inline styles
-import printBackground from './assets/print_background.json';
+// Print-specific config properties
+import printConfig from './assets/complete_printconfig.json';
 
 export default class SilverStylesPrint extends React.Component {
 
@@ -24,30 +22,29 @@ export default class SilverStylesPrint extends React.Component {
   }
   // PROP TYPES ends
 
-  // CONSTRUCTOR
-  // State amends config with context-specifics
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     config: props.config,
-  //   };
-  // }
-  // CONSTRUCTOR ends
-
   // AMEND CONFIG is called from render to
   // add context-specific properties to the
   // inherited props.config...
   amendConfig(config) {
     const target = config.strings;
+    // String (title, etc) properties
     const strList = Object.keys(target);
-    const source = printConfig;
+    const source = printConfig.background.strings;
     for (const i in strList) {
       const str = strList[i];
       // Assign new vals to default config object
       target[str] = Object.assign(target[str], source[str]);
     }
     // Append background element definitions:
-    config.background = printBackground;
+    config.backgroundShapes = printConfig.background.shapes;
+    // ...and style-specific outerbox and margins:
+    // *** Overwrite of OUTERBOX is provisional: outer box size will
+    // *** eventually be user-set/confirmed in Editor...
+    config.dimensions.outerbox = {...printConfig.background.dimensions.outerbox};
+    config.dimensions.margins = {...printConfig.background.dimensions.margins};
+    // Axis orientations:
+    config.xOrient = printConfig.chart.xOrient;
+    config.yOrient = printConfig.chart.yOrient;
     return config;
   }
   // AMEND CONFIG ends
@@ -60,6 +57,7 @@ export default class SilverStylesPrint extends React.Component {
     // (ESLint errors this)
     const configClone = { ...this.props.config };
     const config = this.amendConfig(configClone);
+    // console.log('StylesPrint height: ' + config.dimensions.outerbox.height);
     return (
       <SilverChartWrapper
         config={config}
