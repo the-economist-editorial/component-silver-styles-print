@@ -38,9 +38,9 @@ export default class SilverStylesPrint extends React.Component {
     // Append background element definitions:
     config.backgroundShapes = printConfig.background.shapes;
     // ...and style-specific outerbox and margins:
-    // *** Overwrite of OUTERBOX is provisional: outer box size will
-    // *** eventually be user-set/confirmed in Editor...
-    config.dimensions.outerbox = {...printConfig.background.dimensions.outerbox};
+    // NOTE: Outer box size is now user-set/confirmed in Editor...
+    // config.dimensions.outerbox = {...printConfig.background.dimensions.outerbox};
+    // But margins are context-specific:
     config.dimensions.margins = {...printConfig.background.dimensions.margins};
     // Axis orientations:
     config.xOrient = printConfig.chart.xOrient;
@@ -57,7 +57,6 @@ export default class SilverStylesPrint extends React.Component {
     // (ESLint errors this)
     const configClone = { ...this.props.config };
     const config = this.amendConfig(configClone);
-    // console.log('StylesPrint height: ' + config.dimensions.outerbox.height);
     return (
       <SilverChartWrapper
         config={config}

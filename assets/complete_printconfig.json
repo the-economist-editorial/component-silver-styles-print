@@ -18,8 +18,8 @@
         "display": true,
         "x":  0,
         "y": 0,
-        "width": "160px",
-        "height": "155px",
+        "width": "100%",
+        "height": "100%",
         "adjustable": {"height": true, "width": true},
         "fill": "#D5E4EA"
         },
@@ -42,7 +42,7 @@
         "display": true,
         "x":  0,
         "y": 0,
-        "width":  "160px",
+        "width":  "100%",
         "height": "0.3px",
         "adjustable": {"height": false, "width": true},
         "fill": "#FF0000"
