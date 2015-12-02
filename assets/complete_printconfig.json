@@ -12,7 +12,8 @@
     },
     "shapes": [
         {
-        "name": "Main background box (compulsory: set to same size as chart overall)",
+        "name": "Main background box",
+        "note": "This element MUST exist, set to 100% width and height...",
         "shape": "rect",
         "class": "chart-d3-backbox-main",
         "display": true,
@@ -37,9 +38,10 @@
         },
         {
         "name": "Background box: red line at top",
+        "note": "Setting display property to false SHOULD (but doesn't yet) cause element not to display",
         "shape": "rect",
         "class": "chart-d3-backbox-topline",
-        "display": true,
+        "display": false,
         "x":  0,
         "y": 0,
         "width":  "100%",
