@@ -42,9 +42,6 @@ export default class SilverStylesPrint extends React.Component {
     // config.dimensions.outerbox = {...printConfig.background.dimensions.outerbox};
     // But margins are context-specific:
     config.dimensions.margins = {...printConfig.background.dimensions.margins};
-    // Axis orientations:
-    config.xOrient = printConfig.chart.xOrient;
-    config.yOrient = printConfig.chart.yOrient;
     return config;
   }
   // AMEND CONFIG ends
