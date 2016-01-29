@@ -42,6 +42,8 @@ export default class SilverStylesPrint extends React.Component {
     // config.dimensions.outerbox = {...printConfig.background.dimensions.outerbox};
     // But margins are context-specific:
     config.dimensions.margins = {...printConfig.background.dimensions.margins};
+    // Ditto (I think) legend
+    config.dimensions.legend = {...printConfig.background.legend};
     return config;
   }
   // AMEND CONFIG ends

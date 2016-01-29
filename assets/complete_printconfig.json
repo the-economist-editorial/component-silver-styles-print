@@ -10,6 +10,12 @@
       "source": { "x": 12, "y": -5, "leading": 6.5  },
       "footnote": { "x": -12, "y": -5, "leading": 6.5  }
     },
+    "legend": {
+      "keyHeight": 5,
+      "keyWidth": 5,
+      "lineHeight": 10,
+      "top": 30
+    },
     "shapes": [
         {
         "name": "Main background box",
